@@ -71,5 +71,26 @@ ADD CONSTRAINT df_ngaynhap DEFAULT GETDATE() FOR NgayNhap;
 ALTER TABLE SanPham
 ADD CONSTRAINT df_dvt Check (DVT = N'KG' or DVT = N'Thùng' OR DVT = 'Hộp' OR DVT = 'Cái')
 --9.Dùng lệnh T-SQL nhập dữ liệu vào 4 table trên, dữ liệu tùy ý, chú ý các ràng buộc của mỗi Table
+INSERT INTO SanPham (Masp, Tensp, NgayNhap, DVT, SoluongTon, DongiaNhap, TyLeHoaHong)
+ VALUES ('SP1', N'Bút chì', '2022-08-14', N'Cái', 200, 3000, 15)
+ INSERT INTO SanPham (Masp, Tensp, NgayNhap, DVT, SoluongTon, DongiaNhap, TyLeHoaHong)
+ VALUES ('SP2', N'Bút Bi', '2022-08-15', N'Cái', 220, 4000, 10)
+ INSERT INTO SanPham (Masp, Tensp, NgayNhap, DVT, SoluongTon, DongiaNhap, TyLeHoaHong)
+ VALUES ('SP3', N'Bút xoa', '2022-05-14', N'Cái', 10, 3000, 5)
+
+ INSERT INTO KhachHang (MaKH, TenKH, Diachi, Dienthoai)
+VALUES ('KH1', N'Thanh Lam', 'TP.HCM', '0945578442')
+INSERT INTO KhachHang (MaKH, TenKH, Diachi, Dienthoai)
+VALUES ('KH2', N'Toàn Thắng', 'Tây Ninh', '0945566778')
+
+INSERT INTO HoaDon (MaHD, Ngaylap, Ngaygiao, MaKH, Diengiai)
+VALUES ('HD0001', '2022-08-16', '2022-08-25', 'KH1', 'Sản phẩm bút chì loại 1')
+INSERT INTO HoaDon (MaHD, Ngaylap, Ngaygiao, MaKH, Diengiai)
+VALUES ('HD0002', '2022-10-20', '2022-11-05', 'KH2', 'Sản phẩm khẩu trang kháng khuẩn')
+
+INSERT INTO ChiTietHD (MaHD, Masp, Soluong)
+VALUES ('HD0001', 'SP1', 300)
+INSERT INTO ChiTietHD (MaHD, Masp, Soluong)
+VALUES ('HD0002', 'SP2', 800)
 
 
